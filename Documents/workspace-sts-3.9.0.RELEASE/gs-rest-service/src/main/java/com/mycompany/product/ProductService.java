@@ -13,13 +13,15 @@ import com.mycompany.product.Product;
 @RestController
 public class ProductService {
 
-	@RequestMapping("/{env}product/{id}")
+	@RequestMapping("/{env}/product/{id}")
 	Product getProduct(@PathVariable("id") int id) {
 		return new Product(id);
 	}
-
+	
 	@RequestMapping("/productIds")
 	List<Integer> getProductIds(@RequestParam("id") int id) {
 		return Arrays.asList(id + 1, id + 2, id + 3);
 	}
+	 
+	
 }
