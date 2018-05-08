@@ -1,9 +1,18 @@
-package com.mycompany.product;
+package com.mycompany.product.entity;
 
+import javax.persistence.*;
+
+@Entity
 public class Product {
-
+	
+	@Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
 	private int id = 1;
+	
+	@Column(nullable=false)
 	private String name = "Oranges ";
+	
+	@Column(nullable=false)
 	private int catId = 2;
 
 	public Product() {
